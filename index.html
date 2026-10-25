@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instalador de Fibra Optica - Jose Cruz</title>
+    <!-- Tailwind CSS (Framework visual) -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Estilos Personalizados Vincular aquí -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen font-sans flex flex-col justify-between">
+    
+    <div>
+        <!-- Encabezado Principal -->
+        <header class="bg-slate-800 border-b border-slate-700 py-6 px-4 shadow-lg">
+            <div class="max-w-4xl mx-auto text-center">
+                <span class="bg-blue-600 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">INCES Los Teques</span>
+                <h1 class="text-3xl font-extrabold mt-2 text-white">Curso de Instalador de Fibra Óptica</h1>
+                <p class="text-slate-400 mt-1">Guía interactiva para aprender rápido y aprobar el interrogatorio</p>
+            </div>
+        </header>
+
+        <!-- Contenido Principal -->
+        <main class="max-w-4xl mx-auto p-4 md:p-6">
+            
+            <!-- Navegación por pestañas -->
+            <div class="flex flex-wrap justify-center gap-2 mb-8 bg-slate-800 p-2 rounded-xl shadow-inner">
+                <button onclick="switchTab('resumen')" id="btn-resumen" class="tab-btn px-4 py-2 rounded-lg font-medium transition-all bg-blue-600 text-white shadow">📚 Resumen Clave</button>
+                <button onclick="switchTab('tarjetas')" id="btn-tarjetas" class="tab-btn px-4 py-2 rounded-lg font-medium transition-all text-slate-300 hover:bg-slate-700">🃏 Tarjetas Flash</button>
+                <button onclick="switchTab('quiz')" id="btn-quiz" class="tab-btn px-4 py-2 rounded-lg font-medium transition-all text-slate-300 hover:bg-slate-700">✍️ Simulacro de Examen</button>
+            </div>
+
+            <!-- SECCIÓN 1: RESUMEN CLAVE -->
+            <div id="resumen" class="tab-content active space-y-6">
+                <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6 shadow-md">
+                    <h2 class="text-xl font-bold text-blue-400 mb-3">Módulo 1: Fundamentos y Física de la Luz</h2>
+                    <ul class="list-disc list-inside space-y-2 text-slate-300">
+                        <li><strong class="text-white">Fibra Óptica:</strong> Medio flexible de vidrio (sílice) o plástico que transmite datos a alta velocidad mediante pulsos de luz.</li>
+                        <li><strong class="text-white">Estructura:</strong> Núcleo (Core), Revestimiento (Cladding) y Recubrimiento (Buffer/Coating).</li>
+                        <li><strong class="text-white">Tipos de Fibra:</strong> Monomodo (SM: 8-10 µm, larga distancia) y Multimodo (MM: 50-62.5 µm, distancias cortas/LAN).</li>
+                        <li><strong class="text-white">Principios Ópticos:</strong> Reflexión interna total (la luz rebota dentro del núcleo) y Ley de Snell (relación de ángulos y medios).</li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6 shadow-md">
+                    <h2 class="text-xl font-bold text-blue-400 mb-3">Módulo 2: Redes, Planta Externa e Interna</h2>
+                    <ul class="list-disc list-inside space-y-2 text-slate-300">
+                        <li><strong class="text-white">Planta Interna vs Externa:</strong> La interna comprende centrales y bastidores (OLT); la externa abarca postes, tanquetas, mangas de empalme y cables de acceso público.</li>
+                        <li><strong class="text-white">Código de Colores (TIA/EIA-598):</strong> Azul, Naranja, Verde, Marrón, Gris, Blanco, Rojo, Negro, Amarillo, Violeta, Rosa, Agua.</li>
+                        <li><strong class="text-white">Tecnologías:</strong> GPON (red pasiva punto a multipunto con splitters) y Última Milla (tramo final hasta el cliente).</li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6 shadow-md">
+                    <h2 class="text-xl font-bold text-blue-400 mb-3">Módulos 3, 4 y 5: Seguridad, Entorno e Instituciones</h2>
+                    <ul class="list-disc list-inside space-y-2 text-slate-300">
+                        <li><strong class="text-white">Organismos:</strong> CONATEL (ente regulador en Venezuela), Cantv (fundada el 20 de junio de 1930) e INPSASEL/LOPCYMAT (prevención y seguridad laboral).</li>
+                        <li><strong class="text-white">Seguridad (EPP):</strong> Casco con barboquejo, lentes, guantes dieléctricos, botas de seguridad y kit anticaídas (arnés y línea de vida con absorbedor).</li>
+                        <li><strong class="text-white">Proyecto de Fibra:</strong> 1. Demanda -> 2. Diseño e Ingeniería -> 3. Construcción y Tendido -> 4. Pruebas y Certificación.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 2: TARJETAS INTERACTIVAS -->
+            <div id="tarjetas" class="tab-content">
+                <div class="max-w-xl mx-auto text-center">
+                    <div onclick="flipCard()" id="flashcard" class="bg-slate-800 border-2 border-blue-500/50 rounded-2xl p-8 h-64 flex flex-col justify-center items-center cursor-pointer shadow-xl transition-transform hover:scale-[1.02]">
+                        <span id="fc-tag" class="text-xs uppercase tracking-widest text-blue-400 mb-4 font-semibold">Cargando...</span>
+                        <p id="fc-text" class="text-lg md:text-xl font-medium text-white px-4">---</p>
+                        <span class="text-xs text-slate-500 mt-6">(Haz clic o toca la tarjeta para voltear)</span>
+                    </div>
+                    <div class="flex justify-between mt-6">
+                        <button onclick="prevCard()" class="bg-slate-700 hover:bg-slate-600 px-5 py-2.5 rounded-xl font-medium transition">Anterior</button>
+                        <button onclick="nextCard()" class="bg-blue-600 hover:bg-blue-500 px-5 py-2.5 rounded-xl font-medium transition shadow-lg shadow-blue-600/30">Siguiente</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 3: SIMULACRO / QUIZ -->
+            <div id="quiz" class="tab-content">
+                <div class="max-w-xl mx-auto bg-slate-800 border border-slate-700 rounded-2xl p-6 shadow-md">
+                    <div id="quiz-container">
+                        <div class="flex justify-between text-sm text-slate-400 mb-4">
+                            <span id="quiz-progress">Pregunta 1</span>
+                            <span id="quiz-score">Puntuación: 0</span>
+                        </div>
+                        <h3 id="q-title" class="text-lg font-bold text-white mb-4">Cargando...</h3>
+                        <div id="q-options" class="space-y-3">
+                            <!-- Opciones cargadas por JS -->
+                        </div>
+                        <div id="q-feedback" class="mt-4 p-3 rounded-lg hidden text-sm"></div>
+                        <button id="next-q-btn" onclick="nextQuestion()" class="mt-6 w-full bg-blue-600 hover:bg-blue-500 text-white font-semibold py-3 rounded-xl transition shadow-lg shadow-blue-600/30 hidden">Siguiente Pregunta</button>
+                    </div>
+                    
+                    <div id="quiz-results" class="text-center hidden py-8">
+                        <h3 class="text-2xl font-bold text-white mb-2">¡Simulacro Completado!</h3>
+                        <p id="final-score-text" class="text-lg text-slate-300 mb-6">Tu puntuación final es: 0/0</p>
+                        <button onclick="restartQuiz()" class="bg-blue-600 hover:bg-blue-500 text-white font-semibold px-6 py-3 rounded-xl transition">Volver a Intentar</button>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Pie de Página (Footer) -->
+    <footer class="bg-slate-800 border-t border-slate-700 py-6 px-4 text-center mt-12">
+        <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            <p class="text-slate-400 text-sm">
+                © Creado y diseñado por <span class="font-bold text-white">JDK Family</span>. Todos los derechos reservados.
+            </p>
+            <a href="https://wa.me/584241270059" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded-xl text-sm font-semibold transition shadow-lg shadow-emerald-600/30">
+                <!-- Icono de WhatsApp -->
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                </svg>
+                Contactar por WhatsApp
+            </a>
+        </div>
+    </footer>
+
+    <!-- JavaScript Personalizado Vincular aquí -->
+    <script src="script.js"></script>
+</body>
+</html>
