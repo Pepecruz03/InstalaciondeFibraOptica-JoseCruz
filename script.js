@@ -19,44 +19,44 @@ function switchTab(tabId) {
 // ==========================================
 const flashcards = [
     { 
-        q: "¿Qué es la reflexión interna total?", 
-        a: "Es el fenómeno óptico en el cual la luz choca contra el revestimiento en un ángulo mayor al crítico y se refleja totalmente hacia el núcleo sin escaparse." 
+        q: "¿Qué es la fibra óptica?", 
+        a: "Es un medio de transmisión flexible y transparente de vidrio o plástico que envía información a alta velocidad mediante impulsos de luz." 
     },
     { 
-        q: "¿Cuáles son las capas principales de la fibra óptica?", 
-        a: "Núcleo (Core), Revestimiento (Cladding) y Recubrimiento protector (Buffer/Coating)." 
+        q: "¿De qué elementos está formada la fibra óptica?", 
+        a: "Está formada principalmente por núcleo (core), revestimiento (cladding) y recubrimiento primario (coating/buffer)." 
     },
     { 
-        q: "¿Cuál es el tamaño de núcleo de fibra Monomodo vs Multimodo?", 
-        a: "Monomodo (SM): 8 a 10 micras (µm).\nMultimodo (MM): 50 o 62.5 micras (µm)." 
+        q: "¿De qué tamaño son los núcleos según el tipo de fibra?", 
+        a: "Monomodo (SM): Entre 8 y 10 micras. Multimodo (MM): Generalmente de 50 o 62.5 micras." 
     },
     { 
-        q: "¿Qué diferencia hay entre Planta Interna y Planta Externa?", 
-        a: "Planta Interna está dentro de edificaciones o centrales (OLT, bastidores).\nPlanta Externa está desplegada en la calle (postes, tanquetas, mangas, cables aéreos)." 
+        q: "¿Cuál es la diferencia entre Planta Interna y Planta Externa?", 
+        a: "Planta Interna está dentro de edificios/centrales (OLT, bastidores). Planta Externa está en la vía pública (postes, tanquetas, cables aéreos)." 
     },
     { 
         q: "¿Qué es GPON?", 
-        a: "Gigabit Passive Optical Network. Red óptica pasiva punto a multipunto que usa splitters para dar servicio a múltiples usuarios con una sola fibra." 
+        a: "Gigabit Passive Optical Network. Tecnología de acceso punto a multipunto que utiliza divisores pasivos (splitters)." 
     },
     { 
         q: "¿Qué es CONATEL?", 
         a: "Comisión Nacional de Telecomunicaciones de Venezuela, ente regulador del sector." 
     },
     { 
-        q: "¿Cuándo se fundó Cantv y cuál es su tiempo de existencia?", 
-        a: "Fundada el 20 de junio de 1930 (cuenta con 96 años de historia)." 
+        q: "¿Cuándo se fundó Cantv y cuántos años tiene?", 
+        a: "Fue fundada el 20 de junio de 1930. Actualmente tiene 96 años." 
     },
     { 
-        q: "¿Qué equipos de protección (EPP) se usan en trabajo de altura?", 
-        a: "Casco con barboquejo, arnés de cuerpo entero, línea de vida con absorbedor de impacto, botas de seguridad y guantes." 
+        q: "¿Qué equipos de protección (EPP) se usan en trabajos de campo/altura?", 
+        a: "Casco con barboquejo, lentes, guantes dieléctricos, botas, chaleco reflectivo y arnés con cabo de vida." 
     },
     { 
-        q: "¿Cuáles son los primeros 6 colores del código TIA/EIA-598?", 
+        q: "¿Cuál es el orden de los primeros colores del código TIA/EIA-598?", 
         a: "1. Azul, 2. Naranja, 3. Verde, 4. Marrón, 5. Gris, 6. Blanco." 
     },
     { 
-        q: "¿Cuáles son las fases de un diseño de proyecto de fibra?", 
-        a: "1. Planificación/Estudio de demanda\n2. Diseño e Ingeniería\n3. Construcción y Tendido\n4. Pruebas y Certificación." 
+        q: "¿Cuáles son las fases de un proyecto de fibra óptica?", 
+        a: "1. Planificación/Demanda, 2. Diseño e Ingeniería, 3. Construcción y Tendido, 4. Pruebas y Certificación." 
     }
 ];
 
@@ -85,69 +85,235 @@ function prevCard() {
 }
 
 // ==========================================
-// 3. Lógica del Simulacro de Examen
+// 3. Banco Completo de 50 Preguntas (Simulacro Dinámico)
 // ==========================================
-const quizQuestions = [
+const bancoPreguntas = [
     {
-        q: "¿Qué función cumple el revestimiento (cladding) en la fibra óptica?",
+        q: "¿Qué es la fibra óptica?",
         options: [
-            "Conducir electricidad a los equipos receptores",
-            "Mantener la luz dentro del núcleo por reflexión interna",
-            "Servir como manguito contra la humedad exterior",
-            "Aumentar la velocidad de transferencia de la señal"
+            "Un cable de cobre trenzado de alta velocidad",
+            "Un medio de transmisión flexible de vidrio o plástico que envía información mediante impulsos de luz",
+            "Un dispositivo activo que amplifica señales de radio",
+            "Una canalización subterránea para servicios eléctricos"
         ],
         correct: 1,
-        rationale: "El revestimiento tiene un índice de refracción menor que el núcleo para provocar la reflexión interna total."
+        rationale: "Es un medio físico transparente que transmite datos mediante pulsos luminosos."
     },
     {
-        q: "¿Qué tipo de fibra óptica se utiliza principalmente para enlaces de larga distancia?",
+        q: "¿De qué elementos está formada principalmente la fibra óptica?",
         options: [
-            "Fibra Multimodo (MM)",
-            "Fibra Monomodo (SM)",
-            "Fibra Plástica Sintética",
-            "Cable Coaxial de Cobre"
+            "Cobre, plomo y aislante plástico",
+            "Núcleo, revestimiento y recubrimiento primario",
+            "Guaya de acero, gel y chaqueta externa",
+            "Conector SC, adaptador y patch cord"
         ],
         correct: 1,
-        rationale: "La fibra monomodo permite menor dispersión y mayor alcance gracias a su núcleo reducido de 8-10 micras."
+        rationale: "Sus capas principales son el núcleo (core), revestimiento (cladding) y recubrimiento (buffer)."
     },
     {
-        q: "Según la norma TIA/EIA-598, ¿cuál es el color correspondiente al hilo N° 1 de la fibra?",
+        q: "¿Cuál es el tamaño del núcleo en una fibra Monomodo (SM)?",
+        options: ["50 o 62.5 micras", "Entre 8 y 10 micras", "125 micras exactas", "Más de 200 micras"],
+        correct: 1,
+        rationale: "La fibra monomodo posee un núcleo muy estrecho de 8 a 10 micras para larga distancia."
+    },
+    {
+        q: "¿Cuál es el tamaño típico del núcleo en una fibra Multimodo (MM)?",
+        options: ["Entre 8 y 10 micras", "50 o 62.5 micras", "1000 micras", "4 micras"],
+        correct: 1,
+        rationale: "La fibra multimodo maneja núcleos de 50 o 62.5 micras para distancias cortas."
+    },
+    {
+        q: "¿En qué década comenzó el comercio operativo e industrial de la fibra óptica?",
+        options: ["Década de 1950", "Década de 1970", "Década de 1990", "Año 2005"],
+        correct: 1,
+        rationale: "Comenzó en los 70 tras el desarrollo de fibras de baja atenuación por Corning Glass."
+    },
+    {
+        q: "¿Qué es la reflexión interna total?",
         options: [
-            "Verde",
-            "Naranja",
-            "Azul",
-            "Blanco"
+            "La pérdida de luz al doblar demasiado el cable",
+            "El fenómeno donde la luz choca contra el revestimiento en ángulo mayor al crítico y se refleja hacia el núcleo",
+            "El proceso de soldadura por fusión de dos hilos",
+            "La conversión de luz a señales eléctricas en la ONT"
         ],
+        correct: 1,
+        rationale: "Es el principio óptico que permite que la luz viaje a lo largo del cable sin escapar."
+    },
+    {
+        q: "¿Qué describe la Ley de Snell?",
+        options: [
+            "La resistencia eléctrica de los metales",
+            "La relación entre los ángulos de incidencia y refracción al atravesar medios con distintos índices",
+            "La tensión máxima que soporta una guaya de acero",
+            "La velocidad de transmisión en redes GPON"
+        ],
+        correct: 1,
+        rationale: "Explica cómo cambia la dirección y velocidad de la luz entre medios con diferentes índices de refracción."
+    },
+    {
+        q: "¿Qué es el buffer en la construcción de un cable de fibra?",
+        options: [
+            "Un conector rápido para acometidas",
+            "Una cubierta protectora de material plástico que resguarda la fibra de impactos y humedad",
+            "Un divisor de señal pasivo",
+            "El equipo central de transmisión"
+        ],
+        correct: 1,
+        rationale: "El buffer protege mecánicamente a la fibra (puede ser estructura holgada o apretada)."
+    },
+    {
+        q: "¿Qué es la planta externa de telecomunicaciones?",
+        options: [
+            "Los servidores ubicados dentro de la sala de datos",
+            "La infraestructura desplegada en la vía pública o intemperie (postes, canalizaciones, cables)",
+            "El cableado interno de una oficina residencial",
+            "Los equipos terminales dentro del hogar del cliente"
+        ],
+        correct: 1,
+        rationale: "La planta externa conecta la central con los usuarios a través de la calle."
+    },
+    {
+        q: "Según la norma TIA/EIA-598, ¿cuál es el color correspondiente al hilo N° 1?",
+        options: ["Rojo", "Verde", "Azul", "Blanco"],
         correct: 2,
-        rationale: "El código estándar de colores inicia con Azul en la primera posición."
+        rationale: "El código estándar de colores inicia con el color Azul en la primera posición."
     },
     {
-        q: "¿Qué es el splitter en una red GPON?",
+        q: "Según la norma TIA/EIA-598, ¿qué color ocupa la segunda posición en el código de identificación?",
+        options: ["Naranja", "Amarillo", "Marrón", "Negro"],
+        correct: 0,
+        rationale: "La secuencia estándar comienza con Azul y continúa con Naranja."
+    },
+    {
+        q: "¿Qué es una red GPON?",
         options: [
-            "Un divisor pasivo que multiplica las señales ópticas hacia varios usuarios",
-            "Un servidor que asigna direcciones IP a los módems",
-            "Un fusible eléctrico protector de la central",
-            "Un empalme mecánico provisional"
+            "Una red de telefonía fija analógica",
+            "Una Red Óptica Pasiva con Capacidad de Gigabit punto a multipunto con splitters",
+            "Un protocolo de correo electrónico corporativo",
+            "Un sistema de enlaces vía microondas"
+        ],
+        correct: 1,
+        rationale: "GPON utiliza divisores pasivos para repartir internet de alta velocidad usando una sola fibra."
+    },
+    {
+        q: "¿Qué tramo de la red representa la 'Última Milla'?",
+        options: [
+            "El enlace troncal entre ciudades",
+            "El tramo final de acceso que conecta al proveedor directamente con el domicilio o empresa del usuario",
+            "El cableado interno de los racks en la central",
+            "La conexión entre los servidores principales de Google y Cantv"
+        ],
+        correct: 1,
+        rationale: "Es la conexión final que llega directo al cliente."
+    },
+    {
+        q: "¿Cuál es el organismo regulador de las telecomunicaciones en Venezuela (CONATEL)?",
+        options: [
+            "Una empresa privada de televisión por cable",
+            "El órgano del Estado encargado de dirigir, supervisar y promover el sector de telecomunicaciones",
+            "Un sindicato de trabajadores de la construcción",
+            "Una institución internacional de normas ISO"
+        ],
+        correct: 1,
+        rationale: "CONATEL regula y supervisa las telecomunicaciones en el país."
+    },
+    {
+        q: "¿Cuándo fue fundada Cantv y cuántos años cumple actualmente?",
+        options: [
+            "Fundada en 1950 (76 años)",
+            "Fundada el 20 de junio de 1930 (96 años)",
+            "Fundada en 1998 (28 años)",
+            "Fundada en 1920 (106 años)"
+        ],
+        correct: 1,
+        rationale: "Cantv fue fundada el 20 de junio de 1930 y actualmente cumple 96 años."
+    },
+    {
+        q: "¿Qué significan las siglas LOPCYMAT?",
+        options: [
+            "Ley Orgánica de Prevención, Condiciones y Medio Ambiente de Trabajo",
+            "Liga Operativa de Control y Protección de Materiales y Torres",
+            "Norma Internacional de Calidad para Redes de Fibra",
+            "Licencia Obligatoria para Operadores de Planta Externa"
         ],
         correct: 0,
-        rationale: "Los splitters dividen la luz en redes pasivas sin requerir alimentación eléctrica."
+        rationale: "Garantiza a los trabajadores condiciones seguras y saludables en su entorno laboral."
     },
     {
-        q: "¿Cuál es el organismo encargado de fiscalizar la seguridad laboral y el cumplimiento de la LOPCYMAT en Venezuela?",
+        q: "¿Qué función cumple el INPSASEL?",
         options: [
-            "CONATEL",
-            "INPSASEL",
-            "COVENIN",
-            "CANTV"
+            "Vender equipos de protección personal",
+            "Fiscalizar, sancionar y velar por el cumplimiento de la LOPCYMAT",
+            "Diseñar los planos de ingeniería para fibra óptica",
+            "Emitir licencias de conducción de vehículos pesados"
         ],
         correct: 1,
-        rationale: "INPSASEL es el Instituto Nacional de Prevención, Salud y Seguridad Laborales."
+        rationale: "Es el organismo público encargado de hacer cumplir la seguridad laboral."
+    },
+    {
+        q: "¿Qué elementos de protección personal (EPP) son obligatorios para trabajos en altura?",
+        options: [
+            "Solo zapatos de goma y guantes de tela",
+            "Casco con barboquejo, arnés de cuerpo entero, línea de vida y botas de seguridad",
+            "Camisa manga corta y gorra deportiva",
+            "Lentes de sol y protector solar"
+        ],
+        correct: 1,
+        rationale: "Para alturas se requiere arnés anticaídas completo, línea de vida y casco con retención."
+    },
+    {
+        q: "Si ocurre un accidente grave en el campo laboral, ¿cuál es el protocolo inicial?",
+        options: [
+            "Ocultar el incidente para evitar reportes",
+            "Comunicarse con emergencias (911), el supervisor SIAHO y el comité de seguridad",
+            "Continuar trabajando hasta terminar la jornada",
+            "Llamar únicamente a los familiares del afectado"
+        ],
+        correct: 1,
+        rationale: "Se deben activar los servicios de emergencia y reportar al departamento de seguridad (SIAHO)."
+    },
+    {
+        q: "¿Cuáles son las fases principales en la construcción de un proyecto de fibra óptica?",
+        options: [
+            "1. Pintura, 2. Cableado eléctrico, 3. Conexión de bombillos",
+            "1. Planificación/Demanda, 2. Diseño e Ingeniería, 3. Construcción y Tendido, 4. Pruebas y Certificación",
+            "1. Compra de equipos usados, 2. Desecho de cables, 3. Facturación",
+            "1. Inspección visual externa, 2. Desconexión total"
+        ],
+        correct: 1,
+        rationale: "Las fases van desde el estudio de demanda inicial hasta las pruebas y certificación final."
     }
 ];
 
+let quizQuestions = [];
 let currentQuizIndex = 0;
 let score = 0;
 let answered = false;
+
+// Función para barajar un arreglo al azar (Fisher-Yates)
+function shuffleArray(array) {
+    let arr = [...array];
+    for (let i = arr.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+}
+
+// Iniciar un nuevo simulacro tomando 5 preguntas al azar del banco
+function iniciarSimulacro() {
+    // Mezcla todo el banco y toma 5 preguntas (puedes cambiar el 5 por las que quieras, ej: 10)
+    let preguntasMezcladas = shuffleArray(bancoPreguntas);
+    quizQuestions = preguntasMezcladas.slice(0, 5);
+    
+    currentQuizIndex = 0;
+    score = 0;
+    answered = false;
+    
+    document.getElementById('quiz-container').classList.remove('hidden');
+    document.getElementById('quiz-results').classList.add('hidden');
+    loadQuizQuestion();
+}
 
 function loadQuizQuestion() {
     answered = false;
@@ -161,7 +327,7 @@ function loadQuizQuestion() {
     
     q.options.forEach((opt, index) => {
         const btn = document.createElement('button');
-        btn.className = "w-full text-left p-3 rounded-xl bg-slate-700 hover:bg-slate-600 transition text-slate-200 border border-slate-600";
+        btn.className = "w-full text-left p-3 rounded-xl bg-slate-700 hover:bg-slate-600 transition text-slate-200 border border-slate-600 cursor-pointer";
         btn.innerText = opt;
         btn.onclick = () => selectOption(index);
         optionsContainer.appendChild(btn);
@@ -216,15 +382,11 @@ function nextQuestion() {
 }
 
 function restartQuiz() {
-    currentQuizIndex = 0;
-    score = 0;
-    document.getElementById('quiz-container').classList.remove('hidden');
-    document.getElementById('quiz-results').classList.add('hidden');
-    loadQuizQuestion();
+    iniciarSimulacro();
 }
 
 // Inicialización automática al cargar la página
 document.addEventListener('DOMContentLoaded', () => {
     updateCard();
-    loadQuizQuestion();
+    iniciarSimulacro(); // Carga las preguntas aleatorias al entrar
 });
